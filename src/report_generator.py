@@ -50,7 +50,7 @@ def create_ppt_report(data):
 
     name_list = ['S&P500', 'NASDAQ', 'Dow Jones', 'US 10Y Yield', 'USD/KRW', 'KOSPI']
 
-    #종목1
+    #종목별 정보 추가
     for stock in data.iterrows():
         y_dir = 6
         if(stock[0] // 3 == 1):
@@ -98,54 +98,6 @@ def create_ppt_report(data):
             run.font.color.rgb = RGBColor(0, 200, 0)
         else:
             run.font.color.rgb = RGBColor(255, 0, 0)
-
-
-    """
-    textbox = slide.shapes.add_textbox(Cm(3), Cm(6), Cm(4.85), Cm(1.45))
-    text_frame = textbox.text_frame
-    p = text_frame.add_paragraph()
-    run = p.add_run()
-    run.text = "오늘의 주요 지표"
-    run.font.name = "Segoe UI"
-    run.font.size = Pt(28)
-    run.font.bold = True
-    run.font.color.rgb = RGBColor(30, 58, 95)
-    """
-
-    prs.save('output/daily_summary.pptx')
-    
-    """
-    # 표지 슬라이드
-    slide_layout = prs.slide_layouts[0]
-    slide = prs.slides.add_slide(slide_layout)
-    slide.shapes.title.text = "📈 금융 보고서"
-    slide.shapes.placeholders[1].text = "주식 데이터 분석 및 보고서"
-
-    # 데이터 요약 슬라이드
-    slide_layout = prs.slide_layouts[5]
-    slide = prs.slides.add_slide(slide_layout)
-    title = slide.shapes.title
-    title.text = "📊 최근 7일 주가 데이터"
-
-    content = slide.placeholders[1]
-    content.text = f"마지막 종가: {data.iloc[-1]['종가']}\n거래량: {data.iloc[-1]['거래량']}"
-
-    # 차트 슬라이드
-    chart_path = create_chart(data)
-    slide_layout = prs.slide_layouts[5]
-    slide = prs.slides.add_slide(slide_layout)
-    title = slide.shapes.title
-    title.text = "📈 주가 변동 차트"
-
-    left = Inches(1)
-    top = Inches(1.5)
-    pic = slide.shapes.add_picture(chart_path, left, top, width=Inches(8))
-
-    # PPT 저장
-    output_path = "output/financial_report.pptx"
-    prs.save(output_path)
-    print(f"✅ 보고서 생성 완료! ({output_path})")
-    """
 
 if __name__ == "__main__":
     df = pd.read_csv("data/stock_data.csv", encoding='utf-8-sig')
