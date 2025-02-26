@@ -5,5 +5,5 @@ __pycache__/
 
 .DS_Store
 Thumbs.db
-data/stock_data.csv
-output/daily_summary.pptx
+/output
+/data
