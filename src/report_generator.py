@@ -98,6 +98,9 @@ def create_ppt_report(data):
             run.font.color.rgb = RGBColor(0, 200, 0)
         else:
             run.font.color.rgb = RGBColor(255, 0, 0)
+    
+    prs.save(file_path)
+    print("📄 PPT 파일 생성 완료!")
 
 if __name__ == "__main__":
     df = pd.read_csv("data/stock_data.csv", encoding='utf-8-sig')
