@@ -3,11 +3,8 @@
 2025.02.25
 
 사용방법
-1. 필요한 패키지 다운로드(cmd에서 실행)
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
+1. setup.bat으로 초기 필요환경 설치(처음 1회만 사용)
 
 2. run_program.bat 실행
 
-3. output 폴더 안에 daily_summary.ppt 생성됨
+3. output 폴더 안에 생성된 daily_summary.ppt을 확인
