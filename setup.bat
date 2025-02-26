@@ -4,17 +4,14 @@ echo =============================================
 echo 🚀 Setting up Python Virtual Environment...
 echo =============================================
 
-REM ✅ 가상환경(`venv`)이 없으면 생성
 if not exist venv (
     echo 🔧 Creating Virtual Environment...
     python -m venv venv
 )
 
-REM ✅ `venv` 활성화
 echo activating virtual environment...
 call venv\Scripts\activate
 
-REM ✅ 필요한 패키지 설치
 echo =============================================
 echo 📦 Installing required packages...
 echo =============================================
